@@ -1,0 +1,185 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Resources/Imgs/UI/icons/refresh1.png" type="Texture" id=1]
+[ext_resource path="res://Resources/Imgs/UI/icons/home.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/GAME_OVER/game_over_animation-Sheet.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Imgs/UI/btn_texture.tres" type="StyleBox" id=4]
+[ext_resource path="res://Resources/Imgs/UI/bird_laughing.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Font/Default.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Resources/Imgs/UI/btn_pressed_texture.tres" type="StyleBox" id=7]
+[ext_resource path="res://Scenes/Bird_laughing.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/GAME_OVER/GAME_OVER.gd" type="Script" id=10]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
+region = Rect2( 96, 0, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 192, 0, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 288, 0, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 384, 0, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 480, 0, 96, 96 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "GAME_OVER",
+"speed": 10.0
+} ]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 5 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[node name="GAME_OVER" type="Node"]
+script = ExtResource( 10 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+pause_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.105882, 0.121569, 0.129412, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="CanvasLayer/Control/CenterContainer"]
+margin_left = 16.0
+margin_top = 53.0
+margin_right = 128.0
+margin_bottom = 203.0
+rect_min_size = Vector2( 112, 150 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/CenterContainer/Menu"]
+margin_top = 9.0
+margin_right = 112.0
+margin_bottom = 105.0
+rect_min_size = Vector2( 96, 96 )
+
+[node name="GAME_OVER_animation" type="AnimatedSprite" parent="CanvasLayer/Control/CenterContainer/Menu/TextureRect"]
+position = Vector2( 8, 0 )
+frames = SubResource( 7 )
+animation = "GAME_OVER"
+frame = 3
+playing = true
+centered = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/CenterContainer/Menu"]
+margin_top = 109.0
+margin_right = 112.0
+margin_bottom = 141.0
+custom_constants/separation = 16
+alignment = 1
+
+[node name="Back" type="Button" parent="CanvasLayer/Control/CenterContainer/Menu/HBoxContainer"]
+margin_left = 16.0
+margin_right = 48.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = ExtResource( 4 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color_disabled = Color( 1, 0.321569, 0.466667, 1 )
+custom_colors/font_color = Color( 1, 0.321569, 0.466667, 1 )
+custom_colors/font_color_hover = Color( 1, 0.321569, 0.466667, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.321569, 0.466667, 1 )
+custom_constants/hseparation = 0
+icon = ExtResource( 2 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Replay" type="Button" parent="CanvasLayer/Control/CenterContainer/Menu/HBoxContainer"]
+margin_left = 64.0
+margin_right = 96.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = ExtResource( 4 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color_disabled = Color( 1, 0.321569, 0.466667, 1 )
+custom_colors/font_color = Color( 1, 0.321569, 0.466667, 1 )
+custom_colors/font_color_hover = Color( 1, 0.321569, 0.466667, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.321569, 0.466667, 1 )
+custom_constants/hseparation = 0
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bird_laughing" parent="CanvasLayer" instance=ExtResource( 9 )]
+visible = false
+position = Vector2( 16, 240 )
+frames = SubResource( 14 )
+frame = 4
+
+[connection signal="button_down" from="CanvasLayer/Control/CenterContainer/Menu/HBoxContainer/Back" to="." method="_on_Back_pressed"]
+[connection signal="button_down" from="CanvasLayer/Control/CenterContainer/Menu/HBoxContainer/Replay" to="." method="_on_Replay_pressed"]

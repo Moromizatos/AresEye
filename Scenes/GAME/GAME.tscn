@@ -1,0 +1,314 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Scenes/Clouds_BG/Clouds_BG.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/GAME/GAME.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Resources/Tilesets/cloud_tileset.tres" type="TileSet" id=4]
+[ext_resource path="res://Resources/Imgs/UI/GAME_MENU_BTN1.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/POPUP/POPUP.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Resources/Imgs/UI/DROPDOWN_BTN_pressed.tres" type="StyleBox" id=8]
+[ext_resource path="res://Scenes/Bird_laughing.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scripts/UI.gd" type="Script" id=10]
+[ext_resource path="res://Resources/Font/Default.tres" type="DynamicFont" id=11]
+[ext_resource path="res://Resources/Imgs/UI/UI_panels.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Enemy/Enemy.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/GAME/SideBoundaries.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Resources/Imgs/UI/icons/arrow_down.png" type="Texture" id=15]
+[ext_resource path="res://Resources/Imgs/UI/heart.png" type="Texture" id=16]
+[ext_resource path="res://Resources/Imgs/UI/DROPDOWN_BTN.tres" type="StyleBox" id=17]
+[ext_resource path="res://Resources/Imgs/UI/jumping2.png" type="Texture" id=19]
+[ext_resource path="res://Resources/Imgs/UI/coins.png" type="Texture" id=22]
+[ext_resource path="res://Resources/Imgs/UI/UI_panel2.png" type="Texture" id=23]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+period = 5.0
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[node name="GAME" type="Node"]
+pause_mode = 2
+script = ExtResource( 2 )
+noise = SubResource( 1 )
+platform_cap = 0.225
+
+[node name="UI" type="CanvasLayer" parent="."]
+pause_mode = 2
+script = ExtResource( 10 )
+
+[node name="Header" type="HBoxContainer" parent="UI"]
+margin_right = 137.0
+margin_bottom = 26.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP" type="TextureRect" parent="UI/Header"]
+margin_right = 32.0
+margin_bottom = 16.0
+size_flags_vertical = 0
+texture = ExtResource( 12 )
+
+[node name="HBOX1" type="HBoxContainer" parent="UI/Header/HP"]
+margin_right = 32.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 32, 16 )
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MRG1" type="MarginContainer" parent="UI/Header/HP/HBOX1"]
+margin_right = 17.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+custom_constants/margin_left = 1
+
+[node name="Texture" type="TextureRect" parent="UI/Header/HP/HBOX1/MRG1"]
+margin_left = 1.0
+margin_right = 17.0
+margin_bottom = 16.0
+texture = ExtResource( 16 )
+
+[node name="MRG2" type="MarginContainer" parent="UI/Header/HP/HBOX1"]
+margin_left = 17.0
+margin_right = 33.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+custom_constants/margin_top = 4
+custom_constants/margin_bottom = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP_Label" type="Label" parent="UI/Header/HP/HBOX1/MRG2"]
+margin_top = 6.0
+margin_right = 16.0
+margin_bottom = 11.0
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+text = "99"
+valign = 1
+
+[node name="JP" type="TextureRect" parent="UI/Header"]
+margin_left = 32.0
+margin_right = 70.0
+margin_bottom = 16.0
+size_flags_vertical = 0
+texture = ExtResource( 23 )
+
+[node name="HBOX1" type="HBoxContainer" parent="UI/Header/JP"]
+margin_right = 32.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 32, 16 )
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MRG1" type="MarginContainer" parent="UI/Header/JP/HBOX1"]
+margin_right = 17.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+custom_constants/margin_left = 1
+
+[node name="Texture" type="TextureRect" parent="UI/Header/JP/HBOX1/MRG1"]
+margin_left = 1.0
+margin_right = 17.0
+margin_bottom = 16.0
+texture = ExtResource( 19 )
+
+[node name="MRG2" type="MarginContainer" parent="UI/Header/JP/HBOX1"]
+margin_left = 17.0
+margin_right = 33.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+custom_constants/margin_top = 4
+custom_constants/margin_bottom = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Header/JP/HBOX1/MRG2"]
+margin_top = 4.0
+margin_right = 16.0
+margin_bottom = 13.0
+custom_constants/separation = 0
+
+[node name="JP_GND" type="Label" parent="UI/Header/JP/HBOX1/MRG2/HBoxContainer"]
+margin_top = 2.0
+margin_right = 5.0
+margin_bottom = 7.0
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+text = "1"
+valign = 1
+
+[node name="PLUS" type="Label" parent="UI/Header/JP/HBOX1/MRG2/HBoxContainer"]
+margin_left = 5.0
+margin_top = 2.0
+margin_right = 11.0
+margin_bottom = 7.0
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+text = "+"
+valign = 1
+
+[node name="JP_WALL" type="Label" parent="UI/Header/JP/HBOX1/MRG2/HBoxContainer"]
+margin_left = 11.0
+margin_top = 2.0
+margin_right = 16.0
+margin_bottom = 7.0
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+text = "1"
+valign = 1
+
+[node name="CP" type="TextureRect" parent="UI/Header"]
+margin_left = 70.0
+margin_right = 108.0
+margin_bottom = 16.0
+size_flags_vertical = 0
+texture = ExtResource( 23 )
+
+[node name="HBOX1" type="HBoxContainer" parent="UI/Header/CP"]
+margin_right = 32.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 32, 16 )
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MRG1" type="MarginContainer" parent="UI/Header/CP/HBOX1"]
+margin_right = 17.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+custom_constants/margin_left = 1
+
+[node name="Texture" type="TextureRect" parent="UI/Header/CP/HBOX1/MRG1"]
+margin_left = 1.0
+margin_right = 17.0
+margin_bottom = 16.0
+texture = ExtResource( 22 )
+
+[node name="MRG2" type="MarginContainer" parent="UI/Header/CP/HBOX1"]
+margin_left = 17.0
+margin_right = 33.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+custom_constants/margin_top = 4
+custom_constants/margin_bottom = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CP_Label" type="Label" parent="UI/Header/CP/HBOX1/MRG2"]
+margin_top = 6.0
+margin_right = 16.0
+margin_bottom = 11.0
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+text = "0"
+valign = 1
+
+[node name="MenuBtn" type="TextureRect" parent="UI/Header"]
+margin_left = 111.0
+margin_right = 137.0
+margin_bottom = 26.0
+rect_pivot_offset = Vector2( -399, 58 )
+size_flags_horizontal = 10
+texture = ExtResource( 6 )
+stretch_mode = 3
+
+[node name="Button" type="Button" parent="UI/Header/MenuBtn"]
+margin_right = 26.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 26, 22 )
+custom_styles/hover = ExtResource( 17 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = ExtResource( 17 )
+custom_styles/normal = ExtResource( 17 )
+icon = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="POPUP" parent="UI" instance=ExtResource( 7 )]
+
+[node name="Bird_laughing" parent="UI" instance=ExtResource( 9 )]
+visible = false
+position = Vector2( 35, 272 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+pause_mode = 2
+position = Vector2( 72, 128 )
+current = true
+limit_left = 0
+limit_right = 144
+smoothing_enabled = true
+smoothing_speed = 8.0
+drag_margin_left = 0.1
+drag_margin_top = 0.1
+drag_margin_right = 0.1
+drag_margin_bottom = 0.1
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="Game" type="Node2D" parent="."]
+pause_mode = 1
+
+[node name="Clouds_BG" parent="Game" instance=ExtResource( 1 )]
+
+[node name="Bird" parent="Game" instance=ExtResource( 13 )]
+position = Vector2( 168, 107 )
+
+[node name="Bird2" parent="Game" instance=ExtResource( 13 )]
+position = Vector2( 200, 48 )
+
+[node name="Bird3" parent="Game" instance=ExtResource( 13 )]
+position = Vector2( 224, 160 )
+
+[node name="Bird4" parent="Game" instance=ExtResource( 13 )]
+position = Vector2( 216, -24 )
+
+[node name="Bird5" parent="Game" instance=ExtResource( 13 )]
+position = Vector2( 190, -80 )
+
+[node name="Bird6" parent="Game" instance=ExtResource( 13 )]
+position = Vector2( 224, -120 )
+
+[node name="Player" parent="Game" instance=ExtResource( 3 )]
+position = Vector2( 72, 192 )
+collision/safe_margin = 0.3
+
+[node name="Light2D" parent="Game/Player" index="6"]
+color = Color( 1, 1, 1, 1 )
+energy = 2.0
+
+[node name="TileMap" type="TileMap" parent="Game"]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+show_collision = true
+compatibility_mode = true
+centered_textures = true
+cell_clip_uv = true
+format = 1
+tile_data = PoolIntArray( 393222, 1, 196608, 393223, 1, 196609, 393224, 1, 196610, 851968, 1, 196608, 851969, 1, 196609, 851970, 1, 196609, 851971, 1, 196609, 851972, 1, 196609, 851973, 1, 196609, 851974, 1, 196609, 851975, 1, 196609, 851976, 1, 196610 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Game"]
+visible = false
+color = Color( 0.0352941, 0.0627451, 0.258824, 1 )
+
+[node name="Borders" parent="Game" instance=ExtResource( 14 )]
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="pressed" from="UI/Header/MenuBtn/Button" to="UI" method="_on_Menu_pressed"]
+[connection signal="hurt_signal" from="Game/Player" to="UI" method="update_heart_points"]
+[connection signal="jump_signal" from="Game/Player" to="UI" method="update_jump_points"]
+
+[editable path="Game/Clouds_BG"]
+[editable path="Game/Player"]
+[editable path="Game/Borders"]

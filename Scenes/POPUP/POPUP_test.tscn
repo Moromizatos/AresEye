@@ -1,0 +1,408 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Scenes/POPUP/POPUP_BTN.tres" type="StyleBox" id=1]
+[ext_resource path="res://Scenes/POPUP/POPUP_BTN_pressed.tres" type="StyleBox" id=2]
+[ext_resource path="res://Resources/Font/Default.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Resources/Font/Titles.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Resources/Imgs/UI/heart.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Imgs/UI/icons/home.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Imgs/UI/jumping2.png" type="Texture" id=7]
+[ext_resource path="res://Resources/Imgs/UI/coins.png" type="Texture" id=8]
+[ext_resource path="res://Resources/Imgs/UI/icons/shop1.png" type="Texture" id=9]
+[ext_resource path="res://Resources/Imgs/UI/enemy.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/POPUP/POPUP_PANEL.tres" type="StyleBox" id=11]
+[ext_resource path="res://Resources/Imgs/UI/icons/play1.png" type="Texture" id=12]
+[ext_resource path="res://Resources/Imgs/UI/score_flag.png" type="Texture" id=13]
+[ext_resource path="res://Resources/Imgs/UI/star_3.png" type="Texture" id=14]
+[ext_resource path="res://Resources/Imgs/UI/icons/refresh1.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/MODAL/MODAL.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Resources/Imgs/UI/btn_texture2.png" type="Texture" id=17]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxTexture" id=2]
+resource_local_to_scene = true
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 1.0
+content_margin_bottom = 4.0
+texture = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 16, 16 )
+margin_left = 4.0
+margin_right = 4.0
+margin_top = 4.0
+margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id=3]
+resource_local_to_scene = true
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 1.0
+texture = ExtResource( 17 )
+region_rect = Rect2( 16, 0, 16, 16 )
+margin_left = 4.0
+margin_right = 4.0
+margin_top = 7.0
+margin_bottom = 5.0
+
+[node name="POPUP" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0784314, 0.0941176, 0.180392, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+margin_left = 16.0
+margin_top = 48.0
+margin_right = 128.0
+margin_bottom = 208.0
+rect_min_size = Vector2( 112, 160 )
+mouse_filter = 1
+custom_styles/panel = ExtResource( 11 )
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 2
+custom_constants/margin_top = 2
+custom_constants/margin_left = 2
+custom_constants/margin_bottom = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel/MarginContainer"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 110.0
+margin_bottom = 158.0
+rect_clip_content = true
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer3" type="MarginContainer" parent="CenterContainer/Panel/MarginContainer/VBoxContainer"]
+margin_right = 108.0
+margin_bottom = 39.0
+custom_constants/margin_top = 3
+
+[node name="Flag" type="TextureRect" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer3"]
+margin_top = 3.0
+margin_right = 108.0
+margin_bottom = 39.0
+texture = ExtResource( 13 )
+stretch_mode = 4
+
+[node name="stars" type="TextureRect" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer3/Flag"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 14 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Panel/MarginContainer/VBoxContainer"]
+visible = false
+margin_right = 108.0
+margin_bottom = 18.0
+custom_constants/margin_top = 4
+custom_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer"]
+margin_top = 4.0
+margin_right = 108.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+custom_colors/font_color_shadow = Color( 0.45098, 0.466667, 0.427451, 1 )
+custom_constants/shadow_offset_x = 0
+text = "PAUSED"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel/MarginContainer/VBoxContainer"]
+margin_top = 39.0
+margin_right = 108.0
+margin_bottom = 122.0
+size_flags_vertical = 3
+custom_constants/separation = 0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP" type="HBoxContainer" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 4.0
+margin_right = 108.0
+margin_bottom = 20.0
+custom_constants/separation = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/HP"]
+margin_left = 30.0
+margin_right = 46.0
+margin_bottom = 16.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/HP"]
+margin_left = 49.0
+margin_top = 5.0
+margin_right = 56.0
+margin_bottom = 10.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+text = "X"
+
+[node name="value" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/HP"]
+margin_left = 59.0
+margin_top = 5.0
+margin_right = 77.0
+margin_bottom = 10.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+text = "230"
+
+[node name="JP" type="HBoxContainer" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 20.0
+margin_right = 108.0
+margin_bottom = 36.0
+custom_constants/separation = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/JP"]
+margin_left = 31.0
+margin_right = 47.0
+margin_bottom = 16.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/JP"]
+margin_left = 50.0
+margin_top = 5.0
+margin_right = 57.0
+margin_bottom = 10.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+text = "X"
+
+[node name="value" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/JP"]
+margin_left = 60.0
+margin_top = 5.0
+margin_right = 77.0
+margin_bottom = 10.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+text = "137"
+
+[node name="KP" type="HBoxContainer" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 36.0
+margin_right = 108.0
+margin_bottom = 52.0
+custom_constants/separation = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/KP"]
+margin_left = 33.0
+margin_right = 49.0
+margin_bottom = 16.0
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/KP"]
+margin_left = 52.0
+margin_top = 5.0
+margin_right = 59.0
+margin_bottom = 10.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+text = "X"
+
+[node name="value" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/KP"]
+margin_left = 62.0
+margin_top = 5.0
+margin_right = 74.0
+margin_bottom = 10.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+text = "55"
+
+[node name="CP" type="HBoxContainer" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 52.0
+margin_right = 108.0
+margin_bottom = 68.0
+custom_constants/separation = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/CP"]
+margin_left = 30.0
+margin_right = 46.0
+margin_bottom = 16.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/CP"]
+margin_left = 49.0
+margin_top = 5.0
+margin_right = 56.0
+margin_bottom = 10.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+text = "X"
+
+[node name="value" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/CP"]
+margin_left = 59.0
+margin_top = 5.0
+margin_right = 77.0
+margin_bottom = 10.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+text = "999"
+
+[node name="Total" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 68.0
+margin_right = 108.0
+margin_bottom = 78.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+text = "1562"
+align = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="CenterContainer/Panel/MarginContainer/VBoxContainer"]
+margin_top = 122.0
+margin_right = 108.0
+margin_bottom = 156.0
+custom_constants/margin_top = 3
+custom_constants/margin_bottom = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer2"]
+margin_top = 3.0
+margin_right = 108.0
+margin_bottom = 31.0
+custom_constants/separation = 2
+alignment = 1
+
+[node name="Home" type="Button" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer"]
+margin_left = 3.0
+margin_right = 27.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 24, 28 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_disabled = Color( 1, 0.321569, 0.466667, 1 )
+custom_colors/font_color = Color( 1, 0.321569, 0.466667, 1 )
+custom_colors/font_color_hover = Color( 1, 0.321569, 0.466667, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.321569, 0.466667, 1 )
+custom_constants/hseparation = 0
+icon = ExtResource( 6 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shop" type="Button" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer"]
+margin_left = 29.0
+margin_right = 53.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 24, 28 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_disabled = Color( 1, 0.321569, 0.466667, 1 )
+custom_colors/font_color = Color( 1, 0.321569, 0.466667, 1 )
+custom_colors/font_color_hover = Color( 1, 0.321569, 0.466667, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.321569, 0.466667, 1 )
+custom_constants/hseparation = 0
+icon = ExtResource( 9 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="Button" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer"]
+margin_left = 55.0
+margin_right = 79.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 24, 28 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_disabled = Color( 1, 0.321569, 0.466667, 1 )
+custom_colors/font_color = Color( 1, 0.321569, 0.466667, 1 )
+custom_colors/font_color_hover = Color( 1, 0.321569, 0.466667, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.321569, 0.466667, 1 )
+custom_constants/hseparation = 0
+icon = ExtResource( 15 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Button" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer"]
+margin_left = 81.0
+margin_right = 105.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 24, 28 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_disabled = Color( 1, 0.321569, 0.466667, 1 )
+custom_colors/font_color = Color( 1, 0.321569, 0.466667, 1 )
+custom_colors/font_color_hover = Color( 1, 0.321569, 0.466667, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.321569, 0.466667, 1 )
+custom_constants/hseparation = 0
+icon = ExtResource( 12 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MODAL" parent="." instance=ExtResource( 16 )]
+visible = false
+
+[node name="OK" parent="MODAL/Panel/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+
+[node name="CANCEL" parent="MODAL/Panel/MarginContainer/VBoxContainer/HBoxContainer" index="1"]
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+
+[editable path="MODAL"]

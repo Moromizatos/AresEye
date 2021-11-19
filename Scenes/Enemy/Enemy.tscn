@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scenes/Enemy/bird001-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Enemy/Enemy.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "Dying",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "Flying",
+"speed": 8.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 2, 10 )
+
+[sub_resource type="RectangleShape2D" id=8]
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 8, 1 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 160, 160 )
+
+[node name="Bird" type="KinematicBody2D"]
+collision_mask = 0
+script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 6 )
+animation = "Flying"
+playing = true
+
+[node name="hitbox" type="Area2D" parent="."]
+input_pickable = false
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2( -12, 0 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 8 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="stomp" type="Area2D" parent="."]
+input_pickable = false
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stomp"]
+position = Vector2( 0, -11 )
+shape = SubResource( 9 )
+
+[node name="Process" type="Area2D" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+show_behind_parent = true
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Process"]
+shape = SubResource( 10 )
+
+[connection signal="body_entered" from="stomp" to="." method="_on_stomp_body_entered"]
+[connection signal="body_entered" from="Process" to="." method="_on_Process_body_entered"]
+[connection signal="body_exited" from="Process" to="." method="_on_Process_body_exited"]

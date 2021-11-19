@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Imgs/UI/GAME_MENU_BTN1.png" type="Texture" id=1]
+[ext_resource path="res://Resources/Imgs/UI/GAME_MENU_BTN2.png" type="Texture" id=2]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 0, 18, 1, 20, 2, 21, 4, 22, 22, 22, 24, 21, 25, 20, 26, 18, 26, 0 )
+
+[node name="TouchScreenButton" type="TouchScreenButton"]
+normal = ExtResource( 1 )
+pressed = ExtResource( 2 )
+shape = SubResource( 1 )
+shape_centered = false

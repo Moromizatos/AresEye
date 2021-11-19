@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Clouds_BG/BG.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Clouds_BG/FG.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Clouds_BG/MG.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Clouds_BG/imgs/FG.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Clouds_BG/imgs/BG.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Clouds_BG/imgs/MG.png" type="Texture" id=6]
+
+[node name="Clouds_BG" type="Node2D"]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="ParallaxBG" type="ParallaxBackground" parent="."]
+
+[node name="BG" type="ParallaxLayer" parent="ParallaxBG"]
+motion_scale = Vector2( 1, 0.4 )
+motion_mirroring = Vector2( 0, 256 )
+
+[node name="spr1" type="Sprite" parent="ParallaxBG/BG"]
+texture = ExtResource( 5 )
+centered = false
+script = ExtResource( 1 )
+
+[node name="spr2" type="Sprite" parent="ParallaxBG/BG"]
+position = Vector2( 0, -256 )
+texture = ExtResource( 5 )
+centered = false
+script = ExtResource( 1 )
+
+[node name="MG" type="ParallaxLayer" parent="ParallaxBG"]
+motion_scale = Vector2( 1, 0.6 )
+motion_mirroring = Vector2( 0, 256 )
+
+[node name="spr1" type="Sprite" parent="ParallaxBG/MG"]
+texture = ExtResource( 6 )
+centered = false
+script = ExtResource( 3 )
+
+[node name="spr2" type="Sprite" parent="ParallaxBG/MG"]
+position = Vector2( 0, -256 )
+texture = ExtResource( 6 )
+centered = false
+script = ExtResource( 3 )
+
+[node name="FG" type="ParallaxLayer" parent="ParallaxBG"]
+motion_scale = Vector2( 1, 0.8 )
+motion_mirroring = Vector2( 0, 256 )
+
+[node name="spr1" type="Sprite" parent="ParallaxBG/FG"]
+texture = ExtResource( 4 )
+centered = false
+script = ExtResource( 2 )
+
+[node name="spr2" type="Sprite" parent="ParallaxBG/FG"]
+position = Vector2( 0, -256 )
+texture = ExtResource( 4 )
+centered = false
+script = ExtResource( 2 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="ParallaxBG"]
