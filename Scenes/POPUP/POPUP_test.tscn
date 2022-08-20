@@ -125,10 +125,10 @@ custom_constants/margin_bottom = 4
 margin_top = 4.0
 margin_right = 108.0
 margin_bottom = 14.0
-custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
 custom_colors/font_color_shadow = Color( 0.45098, 0.466667, 0.427451, 1 )
 custom_constants/shadow_offset_x = 0
+custom_fonts/font = ExtResource( 4 )
 text = "PAUSED"
 align = 1
 
@@ -164,8 +164,8 @@ margin_left = 49.0
 margin_top = 5.0
 margin_right = 56.0
 margin_bottom = 10.0
-custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "X"
 
 [node name="value" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/HP"]
@@ -173,8 +173,8 @@ margin_left = 59.0
 margin_top = 5.0
 margin_right = 77.0
 margin_bottom = 10.0
-custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "230"
 
 [node name="JP" type="HBoxContainer" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
@@ -198,8 +198,8 @@ margin_left = 50.0
 margin_top = 5.0
 margin_right = 57.0
 margin_bottom = 10.0
-custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "X"
 
 [node name="value" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/JP"]
@@ -207,8 +207,8 @@ margin_left = 60.0
 margin_top = 5.0
 margin_right = 77.0
 margin_bottom = 10.0
-custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "137"
 
 [node name="KP" type="HBoxContainer" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
@@ -232,8 +232,8 @@ margin_left = 52.0
 margin_top = 5.0
 margin_right = 59.0
 margin_bottom = 10.0
-custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "X"
 
 [node name="value" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/KP"]
@@ -241,8 +241,8 @@ margin_left = 62.0
 margin_top = 5.0
 margin_right = 74.0
 margin_bottom = 10.0
-custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "55"
 
 [node name="CP" type="HBoxContainer" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
@@ -266,8 +266,8 @@ margin_left = 49.0
 margin_top = 5.0
 margin_right = 56.0
 margin_bottom = 10.0
-custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "X"
 
 [node name="value" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/CP"]
@@ -275,16 +275,16 @@ margin_left = 59.0
 margin_top = 5.0
 margin_right = 77.0
 margin_bottom = 10.0
-custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "999"
 
 [node name="Total" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
 margin_top = 68.0
 margin_right = 108.0
 margin_bottom = 78.0
-custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.168627, 0.168627, 0.270588, 1 )
+custom_fonts/font = ExtResource( 4 )
 text = "1562"
 align = 1
 
@@ -307,17 +307,17 @@ margin_left = 3.0
 margin_right = 27.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 24, 28 )
-custom_styles/hover = ExtResource( 1 )
-custom_styles/pressed = ExtResource( 2 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = ExtResource( 1 )
-custom_styles/normal = ExtResource( 1 )
-custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_disabled = Color( 1, 0.321569, 0.466667, 1 )
 custom_colors/font_color = Color( 1, 0.321569, 0.466667, 1 )
 custom_colors/font_color_hover = Color( 1, 0.321569, 0.466667, 1 )
 custom_colors/font_color_pressed = Color( 1, 0.321569, 0.466667, 1 )
 custom_constants/hseparation = 0
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
 icon = ExtResource( 6 )
 align = 2
 __meta__ = {
@@ -329,17 +329,17 @@ margin_left = 29.0
 margin_right = 53.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 24, 28 )
-custom_styles/hover = ExtResource( 1 )
-custom_styles/pressed = ExtResource( 2 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = ExtResource( 1 )
-custom_styles/normal = ExtResource( 1 )
-custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_disabled = Color( 1, 0.321569, 0.466667, 1 )
 custom_colors/font_color = Color( 1, 0.321569, 0.466667, 1 )
 custom_colors/font_color_hover = Color( 1, 0.321569, 0.466667, 1 )
 custom_colors/font_color_pressed = Color( 1, 0.321569, 0.466667, 1 )
 custom_constants/hseparation = 0
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
 icon = ExtResource( 9 )
 align = 2
 __meta__ = {
@@ -351,17 +351,17 @@ margin_left = 55.0
 margin_right = 79.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 24, 28 )
-custom_styles/hover = ExtResource( 1 )
-custom_styles/pressed = ExtResource( 2 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = ExtResource( 1 )
-custom_styles/normal = ExtResource( 1 )
-custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_disabled = Color( 1, 0.321569, 0.466667, 1 )
 custom_colors/font_color = Color( 1, 0.321569, 0.466667, 1 )
 custom_colors/font_color_hover = Color( 1, 0.321569, 0.466667, 1 )
 custom_colors/font_color_pressed = Color( 1, 0.321569, 0.466667, 1 )
 custom_constants/hseparation = 0
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
 icon = ExtResource( 15 )
 align = 2
 __meta__ = {
@@ -373,17 +373,17 @@ margin_left = 81.0
 margin_right = 105.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 24, 28 )
-custom_styles/hover = ExtResource( 1 )
-custom_styles/pressed = ExtResource( 2 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = ExtResource( 1 )
-custom_styles/normal = ExtResource( 1 )
-custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_disabled = Color( 1, 0.321569, 0.466667, 1 )
 custom_colors/font_color = Color( 1, 0.321569, 0.466667, 1 )
 custom_colors/font_color_hover = Color( 1, 0.321569, 0.466667, 1 )
 custom_colors/font_color_pressed = Color( 1, 0.321569, 0.466667, 1 )
 custom_constants/hseparation = 0
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
 icon = ExtResource( 12 )
 align = 2
 __meta__ = {
@@ -391,7 +391,6 @@ __meta__ = {
 }
 
 [node name="MODAL" parent="." instance=ExtResource( 16 )]
-visible = false
 
 [node name="OK" parent="MODAL/Panel/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
 custom_styles/hover = SubResource( 2 )

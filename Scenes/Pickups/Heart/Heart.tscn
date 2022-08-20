@@ -64,6 +64,7 @@ script = ExtResource( 2 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 11 )
 animation = "pickable_heart"
+frame = 4
 playing = true
 
 [node name="Disabled" type="CollisionShape2D" parent="."]

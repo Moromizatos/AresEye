@@ -107,7 +107,6 @@ anims/Running = SubResource( 5 )
 anims/hurt = SubResource( 6 )
 
 [node name="Light2D" type="Light2D" parent="."]
-enabled = false
 texture = ExtResource( 3 )
 color = Color( 0, 0, 0, 1 )
 
